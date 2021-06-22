@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<title>Portfolio</title>
+</head>
+<body>
+	
+	<div class="contenedor">
+		<header>
+			<div class="logo">
+				<h1>Jos&eacute Manuel Rodr&iacute;guez Caballero</h1>
+				<p>Self-Taught Programmer</p>
+			</div>
+			<form action="">
+				<input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Search">
+			</form>
+			<div class="categorias" id="categorias">
+				<a href="#">Mathematics</a>
+				<a href="#">Quantum</a>
+				<a href="#">Cryptography</a>
+				<a href="#">AI</a>
+			</div>
+		</header>
+
+		<section class="grid" id="grid">
+			<div class="item" 
+				 data-categoria="mathematics"
+				 data-etiquetas="proof calculus logic axiom theorem"
+				 data-descripcion="programs about mathematics.">
+				<a href="subjects/ProofAssistant.html" class="item-text">A new proof assistant in the Wolfram Language.</a>
+			</div>
+
+			<div class="item" 
+				 data-categoria="quantum"
+				 data-etiquetas="qiskit qubit gate unitary quantum measurement"
+				 data-descripcion="programs about quantum technology.">
+				<a href="subjects/ToQiskit.html" class="item-text">Translator from the Wolfram Language to Qiskit (Python).</a>
+			</div>
+
+			<div class="item" 
+				data-categoria="ai"
+				data-etiquetas="expert intelligence ai knowledge deduction inference"
+				data-descripcion="programs about artificial intelligence.">
+		   		<a href="ExpertSystem/start.html" class="item-text">Expert system to improve life performance.</a>
+	   		</div>
+
+			<div class="item" 
+			   data-categoria="cryptography"
+			   data-etiquetas="cipher encryption decryption code secret cryptography cryptoanalysis LFSR"
+			   data-descripcion="programs about cryptography.">
+				  <a href="LFSR/LFSR.html" class="item-text">Stream cipher constructed from a linear feedback shift register.</a>
+			</div>
+
+			</section>
+		
+		<section class="overlay" id="overlay">
+			<div class="contenedor-img">
+				<button id="btn-cerrar-popup"><i class="fas fa-times"></i></button>
+				<img src="" alt="">
+			</div>
+			<p class="descripcion"></p>
+		</section>
+
+		<footer class="contenedor">
+			<div class="redes-sociales">
+				<div class="contenedor-icono">
+					<a href="https://www.linkedin.com/in/jos%C3%A9-manuel-rodr%C3%ADguez-caballero-ze-hir-525b33207/" target="_blank" class="twitter">
+						<i class="fab fa-linkedin"></i>
+					</a>
+				</div>
+			</div>
+			<div class="creado-por">
+				<p><a href="#">Jos&eacute Manuel Rodr&iacute;guez Caballero</a> - <a href="https://josephcmac.github.io/">Homepage</a></p>
+			</div>
+		</footer>
+	</div>
+
+	<script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+	<script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>

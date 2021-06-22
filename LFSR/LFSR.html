@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+
+    <title>LFSR</title>
+</head>
+<body>
+    <script src="LFSR.js"> 
+    </script>
+
+    
+<div class="contenedor">
+    <header>
+    <div class="logo">
+    <h1>Example of stream cipher using a Linear Feedback Shift Register</h1>
+    <p> 
+        Stream ciphers are used to encrypt communication on some mobile phones. We provide a textbook example of a stream cipher that a hacker can easily crack.
+    </p>
+    <BR></BR>
+
+    <h2>Message (sequence of bits)</h2>
+    <input type='string' id='messageid'>
+    <BR></BR>
+
+    <h2>Key (sequence of bits)</h2>
+    <input type='string' id='keyid'>
+    <BR></BR>
+
+    <h2>Initial vector (sequence of bits)</h2>
+    <input type='string' id='ivid'>
+    <BR></BR>
+
+    <button  type="button" onclick="main()" class="blocksmall">Apply</button>
+    <BR></BR>
+    <h2 id='outputid'></h2>
+
+    </div>
+    </header>
+    <button type="button" onclick="window.location.href='../Portfolio.html'" class="block" >Main Portfolio</button>
+    <BR></BR>
+
+</div>
+</body>
+</html>
