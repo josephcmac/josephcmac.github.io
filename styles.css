@@ -4,35 +4,33 @@ body {
     font-family: Arial, sans-serif;
 }
 
-nav ul, footer ul {
-    list-style-type: none;
-    padding: 0;
+#buttons {
+    margin: 20px 0;
 }
 
-nav ul li, footer ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-a {
+.infoBtn {
+    margin: 0 10px;
+    padding: 10px;
     color: yellow;
-    text-decoration: none;
+    background-color: darkgray;
+    border: none;
+    cursor: pointer;
 }
 
-a:hover {
-    text-decoration: underline;
+#servicesBtn {
+    background-color: darkgreen;
 }
 
-h2 {
-    border-bottom: 2px solid yellow;
+#aboutBtn {
+    background-color: darkblue;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
+#contactBtn {
+    background-color: darkred;
+}
+
+.infoSection {
+    display: none;
 }
 
 .green-art {
