@@ -1,38 +1,99 @@
+/* General Styling */
 body {
-    background-color: black;
-    color: yellow;
-    font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-#buttons {
-    margin: 20px 0;
+/* Header Section */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.infoBtn {
-    margin: 0 10px;
-    padding: 10px;
-    color: yellow;
-    background-color: darkgray;
-    border: none;
-    cursor: pointer;
+header h1 {
+  font-size: 2.5rem;
 }
 
-#servicesBtn {
-    background-color: darkgreen;
+header h2 {
+  font-size: 1.5rem;
+  font-weight: lighter;
 }
 
-#aboutBtn {
-    background-color: darkblue;
+.hero-img img {
+  border-radius: 50%;
+  width: 150px;
+  border: 3px solid #fff;
 }
 
-#contactBtn {
-    background-color: darkred;
+/* Section Styling */
+section {
+  padding: 3rem 1rem;
 }
 
-.infoSection {
-    display: none;
+.divider {
+  height: 2px;
+  background: #ddd;
+  margin: 2rem 0;
 }
 
-.green-art {
-    color: lime;
+.text-center {
+  text-align: center;
 }
+
+/* Portfolio Section */
+.portfolio-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.portfolio-card:hover {
+  transform: scale(1.05);
+}
+
+/* Footer Styling */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: none;
+}
+
+.scroll-top:hover {
+  background: #e67e22;
+}
+

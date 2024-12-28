@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antisemitic Violence in Canada: A Statistical Perspective</title>
+  <meta name="description" content="A professional statistical analysis of antisemitic violence trends in Canada by José Manuel Rodríguez Caballero.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    /* General Styling */
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.8;
+    }
+    header {
+      background-color: #212121;
+      padding: 2rem;
+      text-align: center;
+      color: #fff;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      text-align: center;
+      background-color: #212121;
+      color: #fff;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Author Card Styling */
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background-color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+    .author-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+    .author-card .author-info a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .author-card .author-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Styling */
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .section p {
+      margin-bottom: 1rem;
+    }
+    .highlight {
+      background-color: #e8f4fc;
+      border-radius: 4px;
+      padding: 0 4px;
+    }
+
+    /* Image Styling */
+    .img-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .img-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .img-caption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    /* Lists */
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Antisemitic Violence in Canada</h1>
+  </header>
+
+  <main>
+    <!-- Author Card -->
+    <div class="author-card">
+      <img 
+        src="pictures/jose2.png" 
+        alt="Author Profile Image">
+      <div class="author-info">
+        <p class="mb-1"><strong>José Manuel Rodríguez Caballero</strong></p>
+        <a href="https://www.linkedin.com/in/jos%C3%A9-manuel-rodr%C3%ADguez-caballero-001b012a2/" target="_blank">View LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- Overview Section -->
+    <section class="section">
+      <h2>Overview</h2>
+      <p>
+        In the past two decades, reported antisemitic violence in Canada has shifted in noteworthy ways. 
+        Data from 
+        <a href="https://www.bnaibrith.ca/antisemitic-incidents/" target="_blank">
+          B'nai Brith Canada
+        </a>
+        show a generally decreasing trend until <strong>2020</strong>. 
+        Beginning in <strong>2021</strong>, however, these reports no longer followed the earlier downward path. 
+        This analysis explores how and why the trajectory changed, and what it may indicate for the Jewish community in Canada.
+      </p>
+    </section>
+
+    <!-- Data Source Section -->
+    <section class="section">
+      <h2>Data Source</h2>
+      <p>
+        The data for this study come from 
+        <a href="https://www.bnaibrith.ca/antisemitic-incidents/" target="_blank">
+          B'nai Brith Canada
+        </a>, 
+        which publishes annual counts of reported antisemitic incidents across the country. 
+        Our analysis focuses on incidents classified specifically as violent from <strong>2002</strong> to <strong>2023</strong>.
+      </p>
+    </section>
+
+    <!-- Analytical Approach Section -->
+    <section class="section">
+      <h2>Analytical Approach</h2>
+      <p>
+        To investigate these trends, we used a
+        <a href="https://en.wikipedia.org/wiki/Poisson_regression" target="_blank">Poisson regression</a> model. 
+        This approach is well-suited for count data, such as the number of reported incidents per year. 
+        We fit the model using data from <strong>2002</strong> through <strong>2020</strong>, capturing the steady decrease in those early years.
+      </p>
+      <p>
+        Next, we used a 
+        <a href="https://en.wikipedia.org/wiki/Bootstrap_(statistics)" target="_blank">bootstrap</a> method to 
+        quantify the uncertainty in the model’s predictions:
+      </p>
+      <ul>
+        <li><strong>Resampling (2002–2020 data)</strong> allowed us to account for variability in the model’s estimates.</li>
+        <li><strong>Future predictions</strong> were then generated for the years 2021–2023 to see if actual incidents would follow or deviate from the historical trend.</li>
+      </ul>
+      <p>
+        These steps provide
+        <a href="https://en.wikipedia.org/wiki/Prediction_interval" target="_blank">prediction intervals</a> 
+        that help us determine whether recent observations are consistent with the prior pattern or signal a meaningful departure. 
+        The R code used for these analyses is available here:
+        <a href="https://github.com/josephcmac/antisemitic-violence-canada-statistics" target="_blank">antisemitic-violence-canada-statistics</a>.
+      </p>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section">
+      <h2>Results</h2>
+      <p>
+        The figure below shows how actual incidents compare to model forecasts. The 
+        <span class="highlight">blue dotted line and dots</span> represent the observed incidents up to 2023, 
+        while the <span class="highlight">black line</span> shows the model’s projections based on the 2002–2020 trend. 
+        The <span class="highlight">gray band</span> around the black line indicates the 95% prediction interval. 
+        Observed data points that lie above this band suggest a meaningful change in the post-2020 period.
+      </p>
+      <div class="img-container">
+        <img 
+          src="pictures/antisemitic_violence_canada.png" 
+          alt="Antisemitic Violence in Canada: Observed vs. Predicted Trends">
+        <div class="img-caption">
+          Figure: Reported Antisemitic Incidents vs. Model Predictions (2002–2023)
+        </div>
+      </div>
+    </section>
+
+    <!-- Interpretation Section -->
+    <section class="section">
+      <h2>Interpretation</h2>
+      <p>
+        From this chart, it appears that antisemitic violence declined steadily until 2020, 
+        hinting that incidents might gradually disappear. After 2021, however, the reported data 
+        diverge from that earlier downward path. This change raises important questions: 
+        what factors might explain the sudden shift in incidents?
+      </p>
+      <p>
+        Possible explanations include differences in <strong>social attitudes</strong>, 
+        such as the influence of immigrants from regions where antisemitism is more common, 
+        or <strong>global events</strong> that have reverberated locally. 
+        For example, disruptions during the <strong>COVID-19 pandemic</strong> or heightened conflicts in the Middle East 
+        may have intensified or reshaped antisemitic behavior within Canada.
+      </p>
+      <p>
+        Identifying the exact causes requires deeper investigation, including demographic analysis, 
+        assessments of media (and social media) influence, and exploration of both local and international dynamics. 
+        Additional contextual data would be helpful in clarifying whether these elevated incident counts reflect 
+        short-term fluctuations or a longer-lasting trend.
+      </p>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="section">
+      <h2>Conclusion</h2>
+      <p>
+        Although historical data suggested a progressive decline in antisemitic violence, 
+        the years following 2021 indicate a significant deviation from that path. 
+        These trends may signal the beginning of a <strong>new phase</strong> in antisemitic incidents, 
+        possibly driven by shifting sociopolitical and global factors.
+      </p>
+      <p>
+        These findings underscore the importance of continued monitoring and further research 
+        into the potential drivers behind this apparent change. 
+        Policymakers, community leaders, and researchers may wish to reevaluate their assumptions about 
+        antisemitic behavior in Canada and investigate underlying causes that could be influencing these outcomes.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data Analysis by José Manuel Rodríguez Caballero</p>
+    <p>All content represents personal views and not those of any institution.</p>
+    <p><a href="index.html">Return to Homepage</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
