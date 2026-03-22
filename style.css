@@ -187,3 +187,55 @@ h1 {
     background-color: #2a4168;
     color: #ffffff;
 }
+
+/* --- Blog Specific Styles --- */
+
+.blog-card {
+    text-align: left; /* Overrides the center alignment from the main profile card for better reading */
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--wave-blue);
+}
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.blog-post-link {
+    display: block;
+    padding: 1.2rem 1.5rem;
+    background-color: var(--wave-blue);
+    border-radius: 8px;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.blog-post-link:hover {
+    border-left: 4px solid var(--sea-teal);
+    background-color: rgba(35, 53, 84, 0.8); /* Slightly lighter wave-blue */
+    transform: translateX(5px);
+}
+
+.blog-post-link h3 {
+    color: var(--text-main);
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+}
+
+.blog-post-link p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.back-btn {
+    margin-top: 1rem;
+}
