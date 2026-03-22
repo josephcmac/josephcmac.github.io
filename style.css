@@ -6,6 +6,7 @@
     --wave-blue: #233554;
     --text-main: #CCD6F6;
     --text-muted: #8892B0;
+    --error-red: #ff6b6b;
     
     /* Slightly lighter navy for background fish silhouettes */
     --fish-color: rgba(35, 53, 84, 0.4); 
@@ -24,20 +25,23 @@ body {
     color: var(--text-main);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Changed from center to allow scrolling from the top */
     min-height: 100vh;
     line-height: 1.6;
-    overflow: hidden; /* Prevent scrollbars from moving fish */
     position: relative;
+    /* --- Layout Fixes --- */
+    overflow-x: hidden; /* Prevents fish from creating horizontal scroll */
+    overflow-y: auto;   /* Enables the requested vertical scroll bar */
+    padding: 40px 0;    /* Adds space at top/bottom when scrolling */
 }
 
-/* --- Content Layering (The crucial change) --- */
+/* --- Content Layering --- */
 .ocean-container {
     padding: 2rem;
     max-width: 600px;
     width: 100%;
     position: relative;
-    z-index: 10; /* Ensures content is above the fish */
+    z-index: 10; /* Ensures content stays above the animated fish */
 }
 
 /* --- Background Fish Animation Setup --- */
@@ -47,15 +51,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Sits behind content */
+    z-index: 1; 
     overflow: hidden;
+    pointer-events: none; /* Ensures fish don't block clicks on links */
 }
 
-/* Base style for all fish */
 .fish {
     position: absolute;
     background-color: var(--fish-color);
-    /* Creates a simple fish silhouette */
     clip-path: polygon(
         15% 0%, 75% 15%, 100% 50%, 75% 85%, 
         15% 100%, 0% 80%, 15% 50%, 0% 20%
@@ -63,42 +66,35 @@ body {
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 }
 
-/* --- Defining the Movements --- */
 @keyframes swim-right {
     0% { left: -150px; }
     100% { left: calc(100% + 150px); }
 }
 
 @keyframes swim-left {
-    0% { left: calc(100% + 150px); transform: scaleX(-1); } /* flip horizontally */
+    0% { left: calc(100% + 150px); transform: scaleX(-1); } 
     100% { left: -150px; transform: scaleX(-1); }
 }
 
-/* --- Fish Variations (Sizes, Speeds, Positions) --- */
-
-/* Size variations */
+/* Fish Variations */
 .fish.small { width: 40px; height: 20px; opacity: 0.3; }
 .fish.medium { width: 70px; height: 35px; opacity: 0.5; }
 .fish.large { width: 110px; height: 55px; opacity: 0.4; }
 
-/* Speed and Direction variations */
 .fish.fast { animation: swim-right 15s linear infinite; }
 .fish.medium-speed { animation: swim-right 25s linear infinite; }
 .fish.slow { animation: swim-right 40s linear infinite; }
 
-/* Reversing the direction */
 .fish.reverse.fast { animation: swim-left 18s linear infinite; }
 .fish.reverse.medium-speed { animation: swim-left 28s linear infinite; }
 .fish.reverse.slow { animation: swim-left 45s linear infinite; }
 
-/* Delay variations (Prevents all fish starting at once) */
 .fish.delay-1 { animation-delay: 2s; }
 .fish.delay-2 { animation-delay: 5s; }
 .fish.delay-3 { animation-delay: 8s; }
 .fish.delay-4 { animation-delay: 12s; }
 .fish.delay-5 { animation-delay: 15s; }
 
-/* Assigning unique vertical positions */
 .fish:nth-child(1) { top: 15%; }
 .fish:nth-child(2) { top: 35%; }
 .fish:nth-child(3) { top: 55%; }
@@ -106,9 +102,7 @@ body {
 .fish:nth-child(5) { top: 25%; }
 .fish:nth-child(6) { top: 85%; }
 
-
-/* --- Rest of Original Profile Card Styling --- */
-
+/* --- Profile Card Styling --- */
 .profile-card {
     background-color: var(--ocean-blue);
     padding: 3rem 2rem;
@@ -116,7 +110,6 @@ body {
     box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
     text-align: center;
     border-top: 4px solid var(--sea-teal);
-    /* Glassmorphism effect makes the card slightly transparent for depth */
     backdrop-filter: blur(5px);
 }
 
@@ -143,19 +136,18 @@ h1 {
     margin-bottom: 2rem;
 }
 
-.blog-description {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-top: 1rem;
+/* --- Section Formatting --- */
+.section-title {
+    font-size: 1.2rem;
+    color: var(--sea-teal);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--wave-blue);
+    padding-bottom: 0.5rem;
+    text-align: left;
 }
 
-.links-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-}
-
+/* --- Buttons & Links --- */
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
@@ -165,6 +157,7 @@ h1 {
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
 }
 
 .btn-navy {
@@ -180,33 +173,74 @@ h1 {
 .btn-sea {
     background-color: var(--wave-blue);
     color: var(--text-main);
-    border: 1px solid transparent;
 }
 
 .btn-sea:hover {
     background-color: #2a4168;
-    color: #ffffff;
 }
 
-/* --- Blog Specific Styles --- */
-
-.blog-card {
-    text-align: left; /* Overrides the center alignment from the main profile card for better reading */
-}
-
-.blog-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--wave-blue);
-}
-
-.blog-list {
+.official-links-grid {
     display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
 }
+
+.official-links-grid a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.85rem;
+    background-color: var(--wave-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.official-links-grid a:hover {
+    background-color: var(--sea-teal);
+    color: var(--deep-navy);
+}
+
+/* --- Security & Verification --- */
+.verification-text {
+    font-size: 0.95rem;
+    text-align: left;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.warning-box {
+    background-color: rgba(255, 107, 107, 0.08);
+    border-left: 4px solid var(--error-red);
+    padding: 1.5rem;
+    border-radius: 6px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.warning-box strong {
+    color: var(--error-red);
+}
+
+.warning-box a {
+    color: var(--error-red);
+    font-weight: bold;
+    word-break: break-all;
+}
+
+.protocol-list {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    color: var(--text-muted);
+}
+
+.protocol-list li {
+    margin-bottom: 0.6rem;
+}
+
+/* --- Blog List Styling (blog.html) --- */
+.blog-card { text-align: left; }
 
 .blog-post-link {
     display: block;
@@ -216,26 +250,21 @@ h1 {
     text-decoration: none;
     border-left: 4px solid transparent;
     transition: all 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 .blog-post-link:hover {
     border-left: 4px solid var(--sea-teal);
-    background-color: rgba(35, 53, 84, 0.8); /* Slightly lighter wave-blue */
+    background-color: rgba(35, 53, 84, 0.8);
     transform: translateX(5px);
 }
 
 .blog-post-link h3 {
     color: var(--text-main);
-    font-size: 1.15rem;
     margin-bottom: 0.4rem;
 }
 
 .blog-post-link p {
     color: var(--text-muted);
     font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-.back-btn {
-    margin-top: 1rem;
 }
