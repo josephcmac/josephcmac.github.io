@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal portfolio of José Manuel Rodriguez Caballero - Accredited Statistician and Mathematician.">
-    <title>José Manuel Rodriguez Caballero</title>
+    <title>José Manuel Rodriguez Caballero | Statistician & Mathematician</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <div class="ocean-background">
+    <div class="ocean-background" aria-hidden="true">
         <div class="fish small fast"></div>
         <div class="fish medium slow delay-1"></div>
         <div class="fish small medium-speed delay-2 reverse"></div>
@@ -18,55 +23,65 @@
         <div class="fish small slow delay-5"></div>
     </div>
 
-    <main class="ocean-container content-front">
+    <main class="ocean-container">
         <article class="profile-card">
-            <img src="photo.png" alt="Portrait of José Manuel Rodriguez Caballero" class="profile-img">
             
-            <header>
+            <header class="profile-header">
+                <img src="photo.png" alt="Portrait of José Manuel Rodriguez Caballero" class="profile-img">
                 <h1>José Manuel Rodriguez Caballero</h1>
-                <h2 class="credentials">
-                    <p>Associate Statistician (A.Stat.)</p> 
+                <ul class="credentials">
+                    <p>Associate Statistician (A.Stat.)</p>
                     <p>M.Sc. Statistics</p>
                     <p>M.Sc. Mathematics</p>
-                </h2>
+                </ul>
             </header>
 
             <section class="links-section">
-                <a href="blog.html" class="btn btn-sea">
-                   Scientific Blog
-                </a>
+                <a href="blog.html" class="btn btn-primary">Scientific Blog</a>
                 <p class="blog-description">Thoughts on Mathematics, Statistics, and Category Theory</p>
             </section>
 
-            <h3 class="section-title">Official Accounts</h3>
-            <div class="official-links-grid">
-                <a href="https://josephcmac.github.io" target="_blank" rel="noopener noreferrer">Homepage</a>
-                <a href="https://github.com/josephcmac" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://orcid.org/0000-0002-3100-1722" target="_blank" rel="noopener noreferrer">ORCID</a>
-                <a href="https://scholar.google.ca/citations?hl=en&user=D8zDZ7IAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-                <a href="https://www.researchgate.net/profile/Jose-Manuel-Rodriguez-Caballero-2" target="_blank" rel="noopener noreferrer">Research Gate</a>
-            </div>
+            <section>
+                <h2 class="section-title">Official Accounts</h2>
+                <nav class="official-links-grid">
+                    <a href="https://josephcmac.github.io" target="_blank" rel="noopener noreferrer">Homepage</a>
+                    <a href="https://github.com/josephcmac" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://orcid.org/0000-0002-3100-1722" target="_blank" rel="noopener noreferrer">ORCID</a>
+                    <a href="https://scholar.google.ca/citations?hl=en&user=D8zDZ7IAAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a>
+                    <a href="https://www.researchgate.net/profile/Jose-Manuel-Rodriguez-Caballero-2" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+                </nav>
+            </section>
 
-            <h3 class="section-title">Identity Verification</h3>
-            <p class="verification-text">My official, verified LinkedIn account serves as the primary proof of my professional identity. Please use it to confirm my credentials:</p>
-            <a href="https://www.linkedin.com/in/jos%C3%A9-manuel-rodriguez-caballero-ab2649357/" target="_blank" rel="noopener noreferrer" class="btn btn-navy" style="width: 100%;">
-                Verify Identity on LinkedIn
-            </a>
-
-            <h3 class="section-title">Security Protocol</h3>
-            <div class="warning-box">
-                <p><strong>Notice regarding unverified accounts:</strong> I do not control the following verified LinkedIn account, despite it being in my name: <br>
-                <a href="https://www.linkedin.com/in/jos%C3%A9-manuel-rodr%C3%ADguez-caballero-001b012a2" target="_blank" rel="noopener noreferrer">Uncontrolled LinkedIn Profile</a></p>
+            <section>
+                <h2 class="section-title">Identity Verification</h2>
+                <p class="verification-text">I use my verified LinkedIn account to prove that I am the true owner of this site.</p>
+                <a href="https://www.linkedin.com/in/jos%C3%A9-manuel-rodriguez-caballero-ab2649357/" target="_blank" rel="noopener noreferrer" class="btn btn-outline full-width mb-1">
+                    Verify Identity on LinkedIn
+                </a>
                 
-                <p>For your security, please treat any contact from an unlisted account as unverified and follow this protocol:</p>
-                <ul class="protocol-list">
-                    <li>Do not click links or download attachments from unverified messages.</li>
-                    <li>Never share passwords, financial details, or personal information.</li>
-                    <li>Do not accept requests or transfer money without independent confirmation.</li>
-                    <li>Verify the account using the official links above.</li>
-                    <li>If you suspect impersonation, block or report the account and notify me through this official site so I can follow up.</li>
-                </ul>
-            </div>
+                <p class="verification-text">For direct communications, you can use my cryptographic protocol for authentication:</p>
+                <a href="identity-verification/verify.html" class="btn btn-outline full-width">
+                    Secure Cryptographic Verification
+                </a>
+            </section>
+
+            <section>
+                <h2 class="section-title">Security Protocol</h2>
+                <div class="warning-box">
+                    <p><strong>Notice regarding unverified accounts:</strong> I do not control the following account, despite it being in my name:</p>
+                    <a href="https://www.linkedin.com/in/jos%C3%A9-manuel-rodr%C3%ADguez-caballero-001b012a2" target="_blank" rel="noopener noreferrer" class="warning-link">Uncontrolled LinkedIn Profile</a>
+                    
+                    <hr class="warning-divider">
+
+                    <p>Treat any contact from unlisted accounts as <strong>UNVERIFIED</strong>:</p>
+                    <ul class="protocol-list">
+                        <li>Do not click links or download attachments.</li>
+                        <li>Never share passwords or personal information.</li>
+                        <li>Verify the account using the official links above.</li>
+                        <li>If you suspect impersonation, notify me via this site.</li>
+                    </ul>
+                </div>
+            </section>
 
         </article>
     </main>

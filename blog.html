@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Scientific Blog of José Manuel Rodriguez Caballero - Mathematics, Statistics, and Category Theory.">
     <title>Scientific Blog | José Manuel Rodriguez Caballero</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <div class="ocean-background">
+    <div class="ocean-background" aria-hidden="true">
         <div class="fish small fast"></div>
         <div class="fish medium slow delay-1"></div>
         <div class="fish small medium-speed delay-2 reverse"></div>
@@ -18,28 +23,27 @@
         <div class="fish small slow delay-5"></div>
     </div>
 
-    <main class="ocean-container content-front">
-        <article class="profile-card blog-card">
+    <main class="ocean-container">
+        <article class="profile-card">
             
-            <header class="blog-header">
+            <header class="profile-header">
                 <h1>Scientific Blog</h1>
-                <h2 class="credentials">Thoughts on Mathematics, Statistics, and Category Theory</h2>
+                <p class="credentials">Thoughts on Mathematics, Statistics, and Category Theory</p>
             </header>
 
             <section class="blog-list">
-                
-                <a href="fisher-rao-disease-prevalence.html" class="blog-post-link">
+                <a href="fisher-rao-disease-prevalence/fisher-rao-disease-prevalence.html" class="blog-post-link">
                     <h3>Understanding Sex Differences in Disease Trajectories</h3>
-                <p>A geometry-informed approach to measuring how 10 major chronic conditions evolve as populations age across the US, Western Europe, and Japan.</p>
+                    <p>A geometry-informed approach to measuring how 10 major chronic conditions evolve as populations age across the US, Western Europe, and Japan.</p>
                 </a>
                 
-            </section>
+                </section>
 
-            <section class="links-section">
-                <a href="index.html" class="btn btn-navy back-btn">
+            <footer class="links-section">
+                <a href="index.html" class="btn btn-outline full-width">
                    ← Back to Home
                 </a>
-            </section>
+            </footer>
 
         </article>
     </main>
