@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin: Hash Generator</title>
+    <link rel="stylesheet" href="generate.css">
+</head>
+<body>
+    <div class="container admin-theme">
+        <header>
+            <h1>Privacy-Preserving Hash Generator</h1>
+            <p class="subtitle">Admin use only: Create anonymous authentication entries for hashes.js</p>
+        </header>
+
+        <form id="generator-form">
+            <div class="form-group">
+                <label for="host-contact">José's Contact (Email/Phone):</label>
+                <input type="text" id="host-contact" required placeholder="e.g., you@example.com">
+                <p class="field-hint">Used as the static salt for the cryptographic hash.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="secret-code">600-bit Secret Code (Base64):</label>
+                <p class="field-hint">Generate this code and send it securely to your guest. Their contact information is no longer required to validate access.</p>
+                <textarea id="secret-code" required 
+                          minlength="100" maxlength="100" rows="3"
+                          placeholder="Click 'Generate Random Code' below..."></textarea>
+                
+                <div class="action-group">
+                    <button type="button" id="generate-secret-btn" class="secondary-btn">Generate Random Code</button>
+                    <button type="button" id="copy-secret-btn" class="secondary-btn">Copy Code</button>
+                </div>
+            </div>
+
+            <button type="submit" id="generate-btn">Generate SHA-512 Hash</button>
+        </form>
+
+        <div id="result-container" class="hidden" style="display: none;">
+            <label>Generated Hash (Add this to hashes.js):</label>
+            <textarea id="output-hash" readonly rows="3"></textarea>
+            <button id="copy-hash-btn" type="button">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <script src="generate.js"></script>
+</body>
+</html>

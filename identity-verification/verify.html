@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure Cryptographic Identity Verification for José Manuel Rodriguez Caballero.">
+    <title>Secure Identity Verification | José Manuel Rodriguez Caballero</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="verify.css">
+    <style>
+        /* Basic utility classes for message styling if not already in verify.css */
+        .success-message { color: #059669; background-color: #d1fae5; padding: 10px; border-radius: 4px; margin-top: 15px; border: 1px solid #34d399; }
+        .error-message { color: #dc2626; background-color: #fee2e2; padding: 10px; border-radius: 4px; margin-top: 15px; border: 1px solid #f87171; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    
+    <div class="ocean-background" aria-hidden="true">
+        <div class="fish small fast"></div>
+        <div class="fish medium slow delay-1"></div>
+        <div class="fish small medium-speed delay-2 reverse"></div>
+        <div class="fish large slow delay-3"></div>
+        <div class="fish medium fast delay-4 reverse"></div>
+        <div class="fish small slow delay-5"></div>
+    </div>
+
+    <main class="ocean-container">
+        <article class="profile-card verification-card">
+            
+            <header class="profile-header">
+                <h1>Identity Verification</h1>
+                <p class="credentials">Zero-Knowledge Token Protocol</p>
+            </header>
+
+           <section class="explanation-box">
+                <h2 class="section-title" style="margin-top: 0;">How it works:</h2>
+                <p class="verification-text">
+                    To securely confirm the identity, just follow these simple steps:
+                </p>
+                <ul class="verification-text" style="padding-left: 20px; margin-bottom: 15px;">
+                    <li><strong>Enter José's contact info:</strong> Type in José's email or phone number.</li>
+                    <li><strong>Paste the secret code:</strong> Enter the exact 100-character code you received.</li>
+                </ul>
+                <p class="verification-text">
+                    For your privacy, this system uses a zero-knowledge token protocol. <strong>Your personal information is neither required nor checked.</strong> Everything is processed safely and directly on your device—no data is transmitted across the internet.
+                </p>
+            </section>
+             
+            <form id="verification-form" class="secure-form">
+                <div class="form-group">
+                    <label for="host-contact">José's Contact (Email/Phone):</label>
+                    <input type="text" id="host-contact" required placeholder="e.g., jose@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="secret-code">Authentication Code:</label>
+                    <textarea id="secret-code" required 
+                              minlength="100" maxlength="100" rows="3"
+                              placeholder="Paste the 100-character authentication code here..."></textarea>
+                </div>
+
+                <button type="submit" id="verify-btn" class="btn btn-primary full-width">Execute Verification</button>
+            </form>
+
+            <div id="result-message" class="hidden" aria-live="polite"></div>
+
+            <footer style="margin-top: 2.5rem;">
+                <a href="../index.html" class="btn btn-outline full-width">← Return to Homepage</a>
+            </footer>
+
+        </article>
+    </main>
+
+    <script src="hashes.js"></script>
+    <script src="verify.js"></script>
+</body>
+</html>
